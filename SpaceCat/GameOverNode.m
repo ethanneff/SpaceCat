@@ -13,11 +13,11 @@
 // create scene (convenience contructor)
 + (instancetype) gameOverAtPosition:(CGPoint)position {
     GameOverNode *gameOver = [self node];
-    gameOver.Name = @"GameOver";
+    gameOver.name = @"GameOver";
     
     SKLabelNode *gameOverLabel = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
     gameOverLabel.text = @"Game Over";
-    gameOverLabel.Name = @"GameOverLabel";
+    gameOverLabel.fontName = @"GameOverLabel";
     gameOverLabel.fontSize = 48;
     gameOverLabel.position = position;
     
@@ -36,7 +36,7 @@
     SKAction *run = [SKAction runBlock:^{
         SKLabelNode *touchToRestart = [SKLabelNode labelNodeWithFontNamed:@"Futura-CondensedExtraBold"];
         touchToRestart.text = @"Touch To Restart";
-        touchToRestart.Name = @"TouchToRestartLabel";
+        touchToRestart.fontName = @"TouchToRestartLabel";
         touchToRestart.fontSize = 22;
         touchToRestart.position = CGPointMake(label.position.x, label.position.y-40);
         [self addChild:touchToRestart];
