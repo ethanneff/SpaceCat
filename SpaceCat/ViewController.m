@@ -7,25 +7,30 @@
 //
 
 #import "ViewController.h"
-#import "MyScene.h"
+#import "TitleScene.h"
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (void)viewDidLayoutSubviews // viewDidLoad good for portrait, not landscape
 {
-    [super viewDidLoad];
+    [super viewDidLayoutSubviews];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    skView.showsFPS = NO;
+    skView.showsNodeCount = NO;
     
-    // Create and configure the scene.
-    SKScene * scene = [MyScene sceneWithSize:skView.bounds.size];
+    // Create and configure the scene. (myscene)
+    SKScene * scene = [TitleScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
     [skView presentScene:scene];
+}
+
+// remove status bar
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 - (BOOL)shouldAutorotate
